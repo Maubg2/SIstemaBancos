@@ -15,7 +15,7 @@ public class ATM extends Thread {
 
 	public void run() {
 		// Pop a la cola
-		System.out.println("Cajero:" + this.numATM + " atendiendo cliente..");
+		System.out.println("Cajero: " + this.numATM + " atendiendo cliente..");
 		while (!die) {
 			try {
 				sleep(this.time * 1000);

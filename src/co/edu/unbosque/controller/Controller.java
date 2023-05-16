@@ -39,29 +39,31 @@ public class Controller implements ActionListener {
 					case "1":
 						// Usuarios promedio: 5
 						for (int i = 0; i <= (int) (Math.random() * (10 - 1)) + 1; i++) {
-							cola.push(transactionArray[(int) ((Math.random() * 3) + 3)]); // Agregar un nodo con una
+							cola.push(transactionArray[(int) (Math.random() * 3 )]); // Agregar un nodo con una
 						}
 						break;
 					case "2":
 						// Usuarios promedio: 10
 						for (int i = 0; i <= (int) (Math.random() * (20 - 1)) + 1; i++) {
-							cola.push(transactionArray[(int) ((Math.random() * 3) + 3)]); // Agregar un nodo con una
+							cola.push(transactionArray[(int) (Math.random() * 3 )]); // Agregar un nodo con una
 						}
 						break;
 					case "3":
 						// Usuarios promedio: 3
 						for (int i = 0; i <= (int) (Math.random() * (9 - 1)) + 1; i++) {
-							cola.push(transactionArray[(int) ((Math.random() * 3) + 3)]); // Agregar un nodo con una
+							cola.push(transactionArray[(int) (Math.random() * 3 )]); // Agregar un nodo con una
 						}
 						break;
 
 					default:
 						break;
 					}
+				}else {
+					JOptionPane.showMessageDialog(null, "Debe ingresar un número del 1 al 3");
 				}
-				for (int i = 1; i <= Integer.parseInt(numATM); i++) {
+			/*	for (int i = 1; i <= Integer.parseInt(numATM); i++) {
 					bank.startATM((int) (Math.random() * (10 - 3)) + 3, i);
-				}
+				}*/
 			} else {
 				JOptionPane.showMessageDialog(null, "Debe ingresar un número del 1 al 5");
 			}
