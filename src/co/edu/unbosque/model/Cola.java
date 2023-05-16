@@ -22,15 +22,18 @@ public class Cola {
 		}
 	}
 
-	public void pop() {
+	public String pop() {
 		if (startC != null) {
+			Node aux = startC;
 			if (startC == finalC) {
 				startC = null;
 				finalC = null;
 			} else {
 				startC = startC.getNext();
 			}
+			return aux.getTransaction();
 		}
+		return null;
 	}
 
 	public void peek() {
