@@ -22,7 +22,7 @@ public class Cola {
 		}
 	}
 
-	public String pop() {
+	public Node pop() {
 		if (startC != null) {
 			Node aux = startC;
 			if (startC == finalC) {
@@ -31,7 +31,7 @@ public class Cola {
 			} else {
 				startC = startC.getNext();
 			}
-			return aux.getTransaction();
+			return aux;
 		}
 		return null;
 	}
