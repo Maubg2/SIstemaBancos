@@ -10,6 +10,7 @@ import java.util.Date;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.Timer;
@@ -20,6 +21,7 @@ public class MainView {
 	private JTextField cashierAmountField;
 	private JLabel lblNewLabel;
 	private JTextArea outputArea;
+	private JScrollPane scrollArea;
 	private JLabel lblNoCajeros;
 	private JButton startSimulationButton;
 	private JLabel lblNewLabel_1;
@@ -41,9 +43,10 @@ public class MainView {
 		frame.getContentPane().add(lblNewLabel);
 
 		outputArea = new JTextArea();
+		scrollArea = new JScrollPane(outputArea);
 		outputArea.setEditable(false);
-		outputArea.setBounds(204, 49, 220, 201);
-		frame.getContentPane().add(outputArea);
+		scrollArea.setBounds(204, 49, 220, 201);
+		frame.getContentPane().add(scrollArea);
 
 		lblNoCajeros = new JLabel("No. Cajeros:");
 		lblNoCajeros.setFont(new Font("OCR A Extended", Font.PLAIN, 12));
@@ -83,6 +86,11 @@ public class MainView {
 		frame.setVisible(true);
 		frame.setBounds(new Rectangle(500, 340));
 		frame.setLocationRelativeTo(null);
+	}
+
+	public void sysoToJTextArea(String text) {
+		this.outputArea.append(text + "\n");
+		this.outputArea.update(this.outputArea.getGraphics());
 	}
 
 	public JFrame getFrame() {

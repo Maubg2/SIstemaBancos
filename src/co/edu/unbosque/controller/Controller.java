@@ -42,7 +42,7 @@ public class Controller implements ActionListener {
 			if (numATM.matches("[1-5]{1}")) {
 				String timeResponse = JOptionPane.showInputDialog(null, "1. 8:00 a 12:00\n" + "2. 12:00 a 14:000\n"
 						+ "3. 14:00 a 16:00\n" + "Ingrese la franja horaria");
-				if (timeResponse.matches("[1-3]{1}")) {
+				if (timeResponse != null && timeResponse.matches("[1-3]{1}")) {
 					switch (timeResponse) { // Switch de franja horaria
 					case "1":
 						// Generación de colas
@@ -51,122 +51,122 @@ public class Controller implements ActionListener {
 						case "1": // 1 cajero => 1 cola
 							randomUserAmount = (int) (Math.random() * (10 - 1)) + 1;
 							for (int i = 0; i <= randomUserAmount; i++) {
-								cola1.push(transactionArray[(int) (Math.random() * 3)]); // Agregar un nodo con una
+								cola1.push(transactionArray[(int) (Math.random() * 4)]); // Agregar un nodo con una
 																							// transacción
 							}
-							System.out.println("Generada cola 1 con " + (randomUserAmount + 1) + " nodos");
+							mv.sysoToJTextArea("Generada cola 1 con " + (randomUserAmount + 1) + " nodos");
 							// Crear hilos con la cola
-							bank.startATM(1, cola1);
+							bank.startATM(1, cola1, mv);
 							break;
 						case "2": // 2 cajeros => 2 colas
 							randomUserAmount = (int) (Math.random() * (10 - 1)) + 1;
 							for (int i = 0; i <= randomUserAmount; i++) {
-								cola1.push(transactionArray[(int) (Math.random() * 3)]); // Agregar un nodo con una
+								cola1.push(transactionArray[(int) (Math.random() * 4)]); // Agregar un nodo con una
 																							// transacción
 							}
-							System.out.println("Generada cola 1 con " + (randomUserAmount + 1) + " nodos");
+							mv.sysoToJTextArea("Generada cola 1 con " + (randomUserAmount + 1) + " nodos");
 							randomUserAmount = (int) (Math.random() * (10 - 1)) + 1;
 							for (int i = 0; i <= randomUserAmount; i++) {
-								cola2.push(transactionArray[(int) (Math.random() * 3)]); // Agregar un nodo con una
+								cola2.push(transactionArray[(int) (Math.random() * 4)]); // Agregar un nodo con una
 																							// transacción
 							}
-							System.out.println("Generada cola 2 con " + (randomUserAmount + 1) + " nodos");
+							mv.sysoToJTextArea("Generada cola 2 con " + (randomUserAmount + 1) + " nodos");
 							// Crear hilos con la cola
-							bank.startATM(1, cola1);
-							bank.startATM(2, cola2);
+							bank.startATM(1, cola1, mv);
+							bank.startATM(2, cola2, mv);
 							break;
 						case "3": // 3 cajeros => 3 colas
 							randomUserAmount = (int) (Math.random() * (10 - 1)) + 1;
 							for (int i = 0; i <= randomUserAmount; i++) {
-								cola1.push(transactionArray[(int) (Math.random() * 3)]); // Agregar un nodo con una
+								cola1.push(transactionArray[(int) (Math.random() * 4)]); // Agregar un nodo con una
 																							// transacción
 							}
-							System.out.println("Generada cola 1 con " + (randomUserAmount + 1) + " nodos");
+							mv.sysoToJTextArea("Generada cola 1 con " + (randomUserAmount + 1) + " nodos");
 							randomUserAmount = (int) (Math.random() * (10 - 1)) + 1;
 							for (int i = 0; i <= randomUserAmount; i++) {
-								cola2.push(transactionArray[(int) (Math.random() * 3)]); // Agregar un nodo con una
+								cola2.push(transactionArray[(int) (Math.random() * 4)]); // Agregar un nodo con una
 																							// transacción
 							}
-							System.out.println("Generada cola 2 con " + (randomUserAmount + 1) + " nodos");
+							mv.sysoToJTextArea("Generada cola 2 con " + (randomUserAmount + 1) + " nodos");
 							randomUserAmount = (int) (Math.random() * (10 - 1)) + 1;
 							for (int i = 0; i <= randomUserAmount; i++) {
-								cola3.push(transactionArray[(int) (Math.random() * 3)]); // Agregar un nodo con una
+								cola3.push(transactionArray[(int) (Math.random() * 4)]); // Agregar un nodo con una
 																							// transacción
 							}
-							System.out.println("Generada cola 3 con " + (randomUserAmount + 1) + " nodos");
+							mv.sysoToJTextArea("Generada cola 3 con " + (randomUserAmount + 1) + " nodos");
 							// Crear hilos con la cola
-							bank.startATM(1, cola1);
-							bank.startATM(2, cola2);
-							bank.startATM(3, cola3);
+							bank.startATM(1, cola1, mv);
+							bank.startATM(2, cola2, mv);
+							bank.startATM(3, cola3, mv);
 							break;
 						case "4": // 4 cajeros => 4 colas
 							randomUserAmount = (int) (Math.random() * (10 - 1)) + 1;
 							for (int i = 0; i <= randomUserAmount; i++) {
-								cola1.push(transactionArray[(int) (Math.random() * 3)]); // Agregar un nodo con una
+								cola1.push(transactionArray[(int) (Math.random() * 4)]); // Agregar un nodo con una
 																							// transacción
 							}
-							System.out.println("Generada cola 1 con " + (randomUserAmount + 1) + " nodos");
+							mv.sysoToJTextArea("Generada cola 1 con " + (randomUserAmount + 1) + " nodos");
 							randomUserAmount = (int) (Math.random() * (10 - 1)) + 1;
 							for (int i = 0; i <= randomUserAmount; i++) {
-								cola2.push(transactionArray[(int) (Math.random() * 3)]); // Agregar un nodo con una
+								cola2.push(transactionArray[(int) (Math.random() * 4)]); // Agregar un nodo con una
 																							// transacción
 							}
-							System.out.println("Generada cola 2 con " + (randomUserAmount + 1) + " nodos");
+							mv.sysoToJTextArea("Generada cola 2 con " + (randomUserAmount + 1) + " nodos");
 							randomUserAmount = (int) (Math.random() * (10 - 1)) + 1;
 							for (int i = 0; i <= randomUserAmount; i++) {
-								cola3.push(transactionArray[(int) (Math.random() * 3)]); // Agregar un nodo con una
+								cola3.push(transactionArray[(int) (Math.random() * 4)]); // Agregar un nodo con una
 																							// transacción
 							}
-							System.out.println("Generada cola 3 con " + (randomUserAmount + 1) + " nodos");
+							mv.sysoToJTextArea("Generada cola 3 con " + (randomUserAmount + 1) + " nodos");
 							randomUserAmount = (int) (Math.random() * (10 - 1)) + 1;
 							for (int i = 0; i <= randomUserAmount; i++) {
-								cola4.push(transactionArray[(int) (Math.random() * 3)]); // Agregar un nodo con una
+								cola4.push(transactionArray[(int) (Math.random() * 4)]); // Agregar un nodo con una
 																							// transacción
 							}
-							System.out.println("Generada cola 4 con " + (randomUserAmount + 1) + " nodos");
+							mv.sysoToJTextArea("Generada cola 4 con " + (randomUserAmount + 1) + " nodos");
 							// Crear hilos con la cola
-							bank.startATM(1, cola1);
-							bank.startATM(2, cola2);
-							bank.startATM(3, cola3);
-							bank.startATM(4, cola4);
+							bank.startATM(1, cola1, mv);
+							bank.startATM(2, cola2, mv);
+							bank.startATM(3, cola3, mv);
+							bank.startATM(4, cola4, mv);
 							break;
 						case "5": // 5 cajeros => 5 colas
 							randomUserAmount = (int) (Math.random() * (10 - 1)) + 1;
 							for (int i = 0; i <= randomUserAmount; i++) {
-								cola1.push(transactionArray[(int) (Math.random() * 3)]); // Agregar un nodo con una
+								cola1.push(transactionArray[(int) (Math.random() * 4)]); // Agregar un nodo con una
 																							// transacción
 							}
-							System.out.println("Generada cola 1 con " + randomUserAmount + " nodos");
+							mv.sysoToJTextArea("Generada cola 1 con " + randomUserAmount + " nodos");
 							randomUserAmount = (int) (Math.random() * (10 - 1)) + 1;
 							for (int i = 0; i <= randomUserAmount; i++) {
-								cola2.push(transactionArray[(int) (Math.random() * 3)]); // Agregar un nodo con una
+								cola2.push(transactionArray[(int) (Math.random() * 4)]); // Agregar un nodo con una
 																							// transacción
 							}
-							System.out.println("Generada cola 2 con " + randomUserAmount + " nodos");
+							mv.sysoToJTextArea("Generada cola 2 con " + randomUserAmount + " nodos");
 							randomUserAmount = (int) (Math.random() * (10 - 1)) + 1;
 							for (int i = 0; i <= randomUserAmount; i++) {
-								cola3.push(transactionArray[(int) (Math.random() * 3)]); // Agregar un nodo con una
+								cola3.push(transactionArray[(int) (Math.random() * 4)]); // Agregar un nodo con una
 																							// transacción
 							}
-							System.out.println("Generada cola 3 con " + randomUserAmount + " nodos");
+							mv.sysoToJTextArea("Generada cola 3 con " + randomUserAmount + " nodos");
 							randomUserAmount = (int) (Math.random() * (10 - 1)) + 1;
 							for (int i = 0; i <= randomUserAmount; i++) {
-								cola4.push(transactionArray[(int) (Math.random() * 3)]); // Agregar un nodo con una
+								cola4.push(transactionArray[(int) (Math.random() * 4)]); // Agregar un nodo con una
 																							// transacción
 							}
-							System.out.println("Generada cola 4 con " + randomUserAmount + " nodos");
+							mv.sysoToJTextArea("Generada cola 4 con " + randomUserAmount + " nodos");
 							randomUserAmount = (int) (Math.random() * (10 - 1)) + 1;
 							for (int i = 0; i <= randomUserAmount; i++) {
-								cola5.push(transactionArray[(int) (Math.random() * 3)]); // Agregar un nodo con una
+								cola5.push(transactionArray[(int) (Math.random() * 4)]); // Agregar un nodo con una
 																							// transacción
 							}
-							System.out.println("Generada cola 5 con " + randomUserAmount + " nodos");
+							mv.sysoToJTextArea("Generada cola 5 con " + randomUserAmount + " nodos");
 
-							bank.startATM(1, cola1);
-							bank.startATM(2, cola2);
-							bank.startATM(3, cola3);
-							bank.startATM(4, cola4);
-							bank.startATM(5, cola5);
+							bank.startATM(1, cola1, mv);
+							bank.startATM(2, cola2, mv);
+							bank.startATM(3, cola3, mv);
+							bank.startATM(4, cola4, mv);
+							bank.startATM(5, cola5, mv);
 							break;
 						}
 						break;
@@ -177,106 +177,121 @@ public class Controller implements ActionListener {
 						case "1": // 1 cajero => 1 cola
 							randomUserAmount = (int) (Math.random() * (20 - 1)) + 1;
 							for (int i = 0; i <= randomUserAmount; i++) {
-								cola1.push(transactionArray[(int) (Math.random() * 3)]); // Agregar un nodo con una
+								cola1.push(transactionArray[(int) (Math.random() * 4)]); // Agregar un nodo con una
 																							// transacción
 							}
+							mv.sysoToJTextArea("Generada cola 1 con " + (randomUserAmount + 1) + " nodos");
 							// Crear hilos con la cola
-							bank.startATM(1, cola1);
+							bank.startATM(1, cola1, mv);
 							break;
 						case "2": // 2 cajeros => 2 colas
 							randomUserAmount = (int) (Math.random() * (20 - 1)) + 1;
 							for (int i = 0; i <= randomUserAmount; i++) {
-								cola1.push(transactionArray[(int) (Math.random() * 3)]); // Agregar un nodo con una
+								cola1.push(transactionArray[(int) (Math.random() * 4)]); // Agregar un nodo con una
 																							// transacción
 							}
+							mv.sysoToJTextArea("Generada cola 1 con " + (randomUserAmount + 1) + " nodos");
 							randomUserAmount = (int) (Math.random() * (20 - 1)) + 1;
 							for (int i = 0; i <= randomUserAmount; i++) {
-								cola2.push(transactionArray[(int) (Math.random() * 3)]); // Agregar un nodo con una
+								cola2.push(transactionArray[(int) (Math.random() * 4)]); // Agregar un nodo con una
 																							// transacción
 							}
+							mv.sysoToJTextArea("Generada cola 2 con " + (randomUserAmount + 1) + " nodos");
 							// Crear hilos con la cola
-							bank.startATM(1, cola1);
-							bank.startATM(2, cola2);
+							bank.startATM(1, cola1, mv);
+							bank.startATM(2, cola2, mv);
 							break;
 						case "3": // 3 cajeros => 3 colas
 							randomUserAmount = (int) (Math.random() * (20 - 1)) + 1;
 							for (int i = 0; i <= randomUserAmount; i++) {
-								cola1.push(transactionArray[(int) (Math.random() * 3)]); // Agregar un nodo con una
+								cola1.push(transactionArray[(int) (Math.random() * 4)]); // Agregar un nodo con una
 																							// transacción
 							}
+							mv.sysoToJTextArea("Generada cola 1 con " + (randomUserAmount + 1) + " nodos");
 							randomUserAmount = (int) (Math.random() * (20 - 1)) + 1;
 							for (int i = 0; i <= randomUserAmount; i++) {
-								cola2.push(transactionArray[(int) (Math.random() * 3)]); // Agregar un nodo con una
+								cola2.push(transactionArray[(int) (Math.random() * 4)]); // Agregar un nodo con una
 																							// transacción
 							}
+							mv.sysoToJTextArea("Generada cola 2 con " + (randomUserAmount + 1) + " nodos");
 							randomUserAmount = (int) (Math.random() * (20 - 1)) + 1;
 							for (int i = 0; i <= randomUserAmount; i++) {
-								cola3.push(transactionArray[(int) (Math.random() * 3)]); // Agregar un nodo con una
+								cola3.push(transactionArray[(int) (Math.random() * 4)]); // Agregar un nodo con una
 																							// transacción
 							}
+							mv.sysoToJTextArea("Generada cola 3 con " + (randomUserAmount + 1) + " nodos");
 							// Crear hilos con la cola
-							bank.startATM(1, cola1);
-							bank.startATM(2, cola2);
-							bank.startATM(3, cola3);
+							bank.startATM(1, cola1, mv);
+							bank.startATM(2, cola2, mv);
+							bank.startATM(3, cola3, mv);
 							break;
 						case "4": // 4 cajeros => 4 colas
 							randomUserAmount = (int) (Math.random() * (20 - 1)) + 1;
 							for (int i = 0; i <= randomUserAmount; i++) {
-								cola1.push(transactionArray[(int) (Math.random() * 3)]); // Agregar un nodo con una
+								cola1.push(transactionArray[(int) (Math.random() * 4)]); // Agregar un nodo con una
 																							// transacción
 							}
+							mv.sysoToJTextArea("Generada cola 1 con " + (randomUserAmount + 1) + " nodos");
 							randomUserAmount = (int) (Math.random() * (20 - 1)) + 1;
 							for (int i = 0; i <= randomUserAmount; i++) {
-								cola2.push(transactionArray[(int) (Math.random() * 3)]); // Agregar un nodo con una
+								cola2.push(transactionArray[(int) (Math.random() * 4)]); // Agregar un nodo con una
 																							// transacción
 							}
+							mv.sysoToJTextArea("Generada cola 2 con " + (randomUserAmount + 1) + " nodos");
 							randomUserAmount = (int) (Math.random() * (20 - 1)) + 1;
 							for (int i = 0; i <= randomUserAmount; i++) {
-								cola3.push(transactionArray[(int) (Math.random() * 3)]); // Agregar un nodo con una
+								cola3.push(transactionArray[(int) (Math.random() * 4)]); // Agregar un nodo con una
 																							// transacción
 							}
+							mv.sysoToJTextArea("Generada cola 3 con " + (randomUserAmount + 1) + " nodos");
 							randomUserAmount = (int) (Math.random() * (20 - 1)) + 1;
 							for (int i = 0; i <= randomUserAmount; i++) {
-								cola4.push(transactionArray[(int) (Math.random() * 3)]); // Agregar un nodo con una
+								cola4.push(transactionArray[(int) (Math.random() * 4)]); // Agregar un nodo con una
 																							// transacción
 							}
+							mv.sysoToJTextArea("Generada cola 4 con " + (randomUserAmount + 1) + " nodos");
 							// Crear hilos con la cola
-							bank.startATM(1, cola1);
-							bank.startATM(2, cola2);
-							bank.startATM(3, cola3);
-							bank.startATM(4, cola4);
+							bank.startATM(1, cola1, mv);
+							bank.startATM(2, cola2, mv);
+							bank.startATM(3, cola3, mv);
+							bank.startATM(4, cola4, mv);
 							break;
 						case "5": // 5 cajeros => 5 colas
 							randomUserAmount = (int) (Math.random() * (20 - 1)) + 1;
 							for (int i = 0; i <= randomUserAmount; i++) {
-								cola1.push(transactionArray[(int) (Math.random() * 3)]); // Agregar un nodo con una
+								cola1.push(transactionArray[(int) (Math.random() * 4)]); // Agregar un nodo con una
 																							// transacción
 							}
+							mv.sysoToJTextArea("Generada cola 1 con " + (randomUserAmount + 1) + " nodos");
 							randomUserAmount = (int) (Math.random() * (20 - 1)) + 1;
 							for (int i = 0; i <= randomUserAmount; i++) {
-								cola2.push(transactionArray[(int) (Math.random() * 3)]); // Agregar un nodo con una
+								cola2.push(transactionArray[(int) (Math.random() * 4)]); // Agregar un nodo con una
 																							// transacción
 							}
+							mv.sysoToJTextArea("Generada cola 2 con " + (randomUserAmount + 1) + " nodos");
 							randomUserAmount = (int) (Math.random() * (20 - 1)) + 1;
 							for (int i = 0; i <= randomUserAmount; i++) {
-								cola3.push(transactionArray[(int) (Math.random() * 3)]); // Agregar un nodo con una
+								cola3.push(transactionArray[(int) (Math.random() * 4)]); // Agregar un nodo con una
 																							// transacción
 							}
+							mv.sysoToJTextArea("Generada cola 3 con " + (randomUserAmount + 1) + " nodos");
 							randomUserAmount = (int) (Math.random() * (20 - 1)) + 1;
 							for (int i = 0; i <= randomUserAmount; i++) {
-								cola4.push(transactionArray[(int) (Math.random() * 3)]); // Agregar un nodo con una
+								cola4.push(transactionArray[(int) (Math.random() * 4)]); // Agregar un nodo con una
 																							// transacción
 							}
+							mv.sysoToJTextArea("Generada cola 4 con " + (randomUserAmount + 1) + " nodos");
 							randomUserAmount = (int) (Math.random() * (20 - 1)) + 1;
 							for (int i = 0; i <= randomUserAmount; i++) {
-								cola5.push(transactionArray[(int) (Math.random() * 3)]); // Agregar un nodo con una
+								cola5.push(transactionArray[(int) (Math.random() * 4)]); // Agregar un nodo con una
 																							// transacción
 							}
-							bank.startATM(1, cola1);
-							bank.startATM(2, cola2);
-							bank.startATM(3, cola3);
-							bank.startATM(4, cola4);
-							bank.startATM(5, cola5);
+							mv.sysoToJTextArea("Generada cola 5 con " + (randomUserAmount + 1) + " nodos");
+							bank.startATM(1, cola1, mv);
+							bank.startATM(2, cola2, mv);
+							bank.startATM(3, cola3, mv);
+							bank.startATM(4, cola4, mv);
+							bank.startATM(5, cola5, mv);
 							break;
 						}
 						break;
@@ -287,107 +302,122 @@ public class Controller implements ActionListener {
 						case "1": // 1 cajero => 1 cola
 							randomUserAmount = (int) (Math.random() * (6 - 1)) + 1;
 							for (int i = 0; i <= randomUserAmount; i++) {
-								cola1.push(transactionArray[(int) (Math.random() * 3)]); // Agregar un nodo con una
+								cola1.push(transactionArray[(int) (Math.random() * 4)]); // Agregar un nodo con una
 																							// transacción
 							}
+							mv.sysoToJTextArea("Generada cola 1 con " + (randomUserAmount + 1) + " nodos");
 							// Crear hilos con la cola
-							bank.startATM(1, cola1);
+							bank.startATM(1, cola1, mv);
 							break;
 						case "2": // 2 cajeros => 2 colas
 							randomUserAmount = (int) (Math.random() * (6 - 1)) + 1;
 							for (int i = 0; i <= randomUserAmount; i++) {
-								cola1.push(transactionArray[(int) (Math.random() * 3)]); // Agregar un nodo con una
+								cola1.push(transactionArray[(int) (Math.random() * 4)]); // Agregar un nodo con una
 																							// transacción
 							}
+							mv.sysoToJTextArea("Generada cola 1 con " + (randomUserAmount + 1) + " nodos");
 							randomUserAmount = (int) (Math.random() * (6 - 1)) + 1;
 							for (int i = 0; i <= randomUserAmount; i++) {
-								cola2.push(transactionArray[(int) (Math.random() * 3)]); // Agregar un nodo con una
+								cola2.push(transactionArray[(int) (Math.random() * 4)]); // Agregar un nodo con una
 																							// transacción
 							}
+							mv.sysoToJTextArea("Generada cola 2 con " + (randomUserAmount + 1) + " nodos");
 							// Crear hilos con la cola
-							bank.startATM(1, cola1);
-							bank.startATM(2, cola2);
+							bank.startATM(1, cola1, mv);
+							bank.startATM(2, cola2, mv);
 							break;
 						case "3": // 3 cajeros => 3 colas
 							randomUserAmount = (int) (Math.random() * (6 - 1)) + 1;
 							for (int i = 0; i <= randomUserAmount; i++) {
-								cola1.push(transactionArray[(int) (Math.random() * 3)]); // Agregar un nodo con una
+								cola1.push(transactionArray[(int) (Math.random() * 4)]); // Agregar un nodo con una
 																							// transacción
 							}
+							mv.sysoToJTextArea("Generada cola 1 con " + (randomUserAmount + 1) + " nodos");
 							randomUserAmount = (int) (Math.random() * (6 - 1)) + 1;
 							for (int i = 0; i <= randomUserAmount; i++) {
-								cola2.push(transactionArray[(int) (Math.random() * 3)]); // Agregar un nodo con una
+								cola2.push(transactionArray[(int) (Math.random() * 4)]); // Agregar un nodo con una
 																							// transacción
 							}
+							mv.sysoToJTextArea("Generada cola 2 con " + (randomUserAmount + 1) + " nodos");
 							randomUserAmount = (int) (Math.random() * (6 - 1)) + 1;
 							for (int i = 0; i <= randomUserAmount; i++) {
-								cola3.push(transactionArray[(int) (Math.random() * 3)]); // Agregar un nodo con una
+								cola3.push(transactionArray[(int) (Math.random() * 4)]); // Agregar un nodo con una
 																							// transacción
 							}
+							mv.sysoToJTextArea("Generada cola 3 con " + (randomUserAmount + 1) + " nodos");
 							// Crear hilos con la cola
-							bank.startATM(1, cola1);
-							bank.startATM(2, cola2);
-							bank.startATM(3, cola3);
+							bank.startATM(1, cola1, mv);
+							bank.startATM(2, cola2, mv);
+							bank.startATM(3, cola3, mv);
 							break;
 						case "4": // 4 cajeros => 4 colas
 							randomUserAmount = (int) (Math.random() * (6 - 1)) + 1;
 							for (int i = 0; i <= randomUserAmount; i++) {
-								cola1.push(transactionArray[(int) (Math.random() * 3)]); // Agregar un nodo con una
+								cola1.push(transactionArray[(int) (Math.random() * 4)]); // Agregar un nodo con una
 																							// transacción
 							}
+							mv.sysoToJTextArea("Generada cola 1 con " + (randomUserAmount + 1) + " nodos");
 							randomUserAmount = (int) (Math.random() * (6 - 1)) + 1;
 							for (int i = 0; i <= randomUserAmount; i++) {
-								cola2.push(transactionArray[(int) (Math.random() * 3)]); // Agregar un nodo con una
+								cola2.push(transactionArray[(int) (Math.random() * 4)]); // Agregar un nodo con una
 																							// transacción
 							}
+							mv.sysoToJTextArea("Generada cola 2 con " + (randomUserAmount + 1) + " nodos");
 							randomUserAmount = (int) (Math.random() * (6 - 1)) + 1;
 							for (int i = 0; i <= randomUserAmount; i++) {
-								cola3.push(transactionArray[(int) (Math.random() * 3)]); // Agregar un nodo con una
+								cola3.push(transactionArray[(int) (Math.random() * 4)]); // Agregar un nodo con una
 																							// transacción
 							}
+							mv.sysoToJTextArea("Generada cola 3 con " + (randomUserAmount + 1) + " nodos");
 							randomUserAmount = (int) (Math.random() * (6 - 1)) + 1;
 							for (int i = 0; i <= randomUserAmount; i++) {
-								cola4.push(transactionArray[(int) (Math.random() * 3)]); // Agregar un nodo con una
+								cola4.push(transactionArray[(int) (Math.random() * 4)]); // Agregar un nodo con una
 																							// transacción
 							}
+							mv.sysoToJTextArea("Generada cola 4 con " + (randomUserAmount + 1) + " nodos");
 							// Crear hilos con la cola
-							bank.startATM(1, cola1);
-							bank.startATM(2, cola2);
-							bank.startATM(3, cola3);
-							bank.startATM(4, cola4);
+							bank.startATM(1, cola1, mv);
+							bank.startATM(2, cola2, mv);
+							bank.startATM(3, cola3, mv);
+							bank.startATM(4, cola4, mv);
 							break;
 						case "5": // 5 cajeros => 5 colas
 							randomUserAmount = (int) (Math.random() * (6 - 1)) + 1;
 							for (int i = 0; i <= randomUserAmount; i++) {
-								cola1.push(transactionArray[(int) (Math.random() * 3)]); // Agregar un nodo con una
+								cola1.push(transactionArray[(int) (Math.random() * 4)]); // Agregar un nodo con una
 																							// transacción
 							}
+							mv.sysoToJTextArea("Generada cola 1 con " + (randomUserAmount + 1) + " nodos");
 							randomUserAmount = (int) (Math.random() * (6 - 1)) + 1;
 							for (int i = 0; i <= randomUserAmount; i++) {
-								cola2.push(transactionArray[(int) (Math.random() * 3)]); // Agregar un nodo con una
+								cola2.push(transactionArray[(int) (Math.random() * 4)]); // Agregar un nodo con una
 																							// transacción
 							}
+							mv.sysoToJTextArea("Generada cola 2 con " + (randomUserAmount + 1) + " nodos");
 							randomUserAmount = (int) (Math.random() * (6 - 1)) + 1;
 							for (int i = 0; i <= randomUserAmount; i++) {
-								cola3.push(transactionArray[(int) (Math.random() * 3)]); // Agregar un nodo con una
+								cola3.push(transactionArray[(int) (Math.random() * 4)]); // Agregar un nodo con una
 																							// transacción
 							}
+							mv.sysoToJTextArea("Generada cola 3 con " + (randomUserAmount + 1) + " nodos");
 							randomUserAmount = (int) (Math.random() * (6 - 1)) + 1;
 							for (int i = 0; i <= randomUserAmount; i++) {
-								cola4.push(transactionArray[(int) (Math.random() * 3)]); // Agregar un nodo con una
+								cola4.push(transactionArray[(int) (Math.random() * 4)]); // Agregar un nodo con una
 																							// transacción
 							}
+							mv.sysoToJTextArea("Generada cola 4 con " + (randomUserAmount + 1) + " nodos");
 							randomUserAmount = (int) (Math.random() * (6 - 1)) + 1;
 							for (int i = 0; i <= randomUserAmount; i++) {
-								cola5.push(transactionArray[(int) (Math.random() * 3)]); // Agregar un nodo con una
+								cola5.push(transactionArray[(int) (Math.random() * 4)]); // Agregar un nodo con una
 																							// transacción
 							}
+							mv.sysoToJTextArea("Generada cola 5 con " + (randomUserAmount + 1) + " nodos");
 							// Iniciar hilos con colas
-							bank.startATM(1, cola1);
-							bank.startATM(2, cola2);
-							bank.startATM(3, cola3);
-							bank.startATM(4, cola4);
-							bank.startATM(5, cola5);
+							bank.startATM(1, cola1, mv);
+							bank.startATM(2, cola2, mv);
+							bank.startATM(3, cola3, mv);
+							bank.startATM(4, cola4, mv);
+							bank.startATM(5, cola5, mv);
 							break;
 						}
 						break;
